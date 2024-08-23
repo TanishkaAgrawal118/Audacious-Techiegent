@@ -9,6 +9,7 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { MdOutlineInsertPageBreak } from "react-icons/md";
 import { PiCalendarCheckDuotone } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
+import { IoMdLogOut } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TbReportSearch } from "react-icons/tb";
 import { LuUserCheck } from "react-icons/lu";
@@ -72,13 +73,7 @@ const Home = ({ children }) => {
           <Row
             style={{ alignItems: "center", display: "flex", width: "330px" }}
           >
-            <img
-              src={logo}
-              alt="Toggle"
-              className="logo"
-              onClick={toggle}
-             
-            />
+            <img src={logo} alt="Toggle" className="logo" onClick={toggle} />
             {isOpen && (
               <div className="search">
                 <input
@@ -126,52 +121,52 @@ const Home = ({ children }) => {
               <h5 className="list">My Options</h5>
               <div className="list">
                 <FaComputer style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Dashboard</h6>
+                <h6>Dashboard</h6>
               </div>
               <div className="list">
                 <VscFeedback style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Feedback</h6>
+                <h6>Feedback</h6>
               </div>
               <div className="list">
                 <GoCrossReference style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Leaves</h6>
+                <h6 >Leaves</h6>
               </div>
               <div className="list">
                 <GoCrossReference style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Attendance</h6>
+                <h6>Attendance</h6>
               </div>
               <div className="list">
                 <FaRegCalendarAlt style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Daily Timesheet</h6>
+                <h6>Daily Timesheet</h6>
               </div>
               <div className="list">
                 <LiaLaptopCodeSolid style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Work Log</h6>
+                <h6 >Work Log</h6>
               </div>
               <div className="list">
                 <GiTakeMyMoney style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Reimbursements</h6>
+                <h6 >Reimbursements</h6>
               </div>
               <hr className="line" />
               <div className="list">
                 <TbReportSearch style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Reports</h6>
+                <h6 >Reports</h6>
               </div>
               <div className="list">
                 <GoCrossReference style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>My expenses</h6>
+                <h6>My expenses</h6>
               </div>
               <div className="list">
                 <GiTakeMyMoney style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Income</h6>
+                <h6>Income</h6>
               </div>
               <div className="list">
                 <BiCategory style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Categories</h6>
+                <h6 >Categories</h6>
               </div>
               <div className="list">
                 <IoSettingsOutline style={{ marginRight: "8px" }} />
-                <h6 style={{ margin: 0 }}>Setting</h6>
+                <h6>Setting</h6>
               </div>
             </Col>
           )}
@@ -185,9 +180,35 @@ const Home = ({ children }) => {
         <MdKeyboardArrowDown onClick={toggleDropdown} className="arrow-icon" />
         {isDropdownOpen && (
           <div className="dropdown-menu">
-            <div className="dropdown-item">Name</div>
-            <div className="dropdown-item">Settings</div>
-            <div className="dropdown-item">Logout</div>
+            <div className="dropdown-item">
+              <div style={{display:"flex"}}>
+                <img className="profile" src={user} alt="Profile" />
+                <div>
+                  <b>John Doe</b>
+                  <p style={{ fontSize: "14px", color: "grey" }}>
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="dropdown-item">
+            <div className="profile-list">
+                <VscFeedback style={{ marginRight: "8px" }} />
+                <h6 >Profile</h6>
+              </div>
+            </div>
+            <div className="dropdown-item">
+            <div className="profile-list">
+                <IoSettingsOutline style={{ marginRight: "8px" }} />
+                <h6 >Account Setting</h6>
+              </div>
+            </div>
+            <div className="dropdown-item">
+            <div className="profile-list">
+                <IoMdLogOut style={{ marginRight: "8px",color:"red" }} />
+                <h6 style={{color:"red"}} >Logout</h6>
+              </div>
+            </div>
           </div>
         )}
       </div>
